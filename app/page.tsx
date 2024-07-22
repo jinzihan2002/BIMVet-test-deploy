@@ -121,11 +121,13 @@ export default function Page() {
     setSidebarExpanded(!sidebarExpanded);
   };
 
+  const { theme, setTheme } = useTheme();
+
   if (!scriptLoaded) {
     return <div>Loading Scripts...</div>;
   }
 
-  const { theme, setTheme } = useTheme();
+  // const { theme, setTheme } = useTheme();
 
   const togglePopup = () => {
     setShowPopup(!showPopup);
