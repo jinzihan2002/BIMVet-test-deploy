@@ -16,7 +16,8 @@ export default function Page() {
   const handleLogin = async () => {
     try {
       router.push('/');
-      const { user, error } = await supabase.auth.signInWithPassword({
+      // const { user, error } = await supabase.auth.signInWithPassword({
+      const { error } = await supabase.auth.signInWithPassword({
         email: email,
         password: password,
       });
