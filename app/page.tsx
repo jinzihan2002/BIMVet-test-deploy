@@ -40,7 +40,7 @@ export default function Page() {
     document.head.appendChild(link);
 
     script.onload = () => {
-      console.log(LMV_VIEWER_VERSION);
+      // console.log(LMV_VIEWER_VERSION);
       setScriptLoaded(true);
     };
 
@@ -74,7 +74,7 @@ export default function Page() {
     setShowPopup(false);
     setSidebarExpanded(false);
     // Load in the previous model
-    loadInViewer(staticURN);
+    loadInViewer(staticURN!);
     setUploadedFileCompleted(true);
   };
 

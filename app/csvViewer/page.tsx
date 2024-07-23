@@ -8,6 +8,10 @@ import { useTheme } from 'next-themes';
 import { Icon } from '@iconify/react';
 import '../custom.css';
 
+type CSVRow = {
+  [key: string]: string;
+}
+
 export default function Page() {
   //Sidebar section
   const [sidebarExpanded, setSidebarExpanded] = useState(false);
@@ -17,12 +21,13 @@ export default function Page() {
   const [uploadedFile, setUploadedFile] = useState<ArrayBuffer | null>(null);
   const [uploadedFileName, setUploadedFileName] = useState('');
   const [uploadedFileCompleted, setUploadedFileCompleted] = useState(false);
-  const [csvData, setCsvData] = useState<any[]>([]);
+  const [csvData, setCsvData] = useState<CSVRow[]>([]);
   const [currentRowIndex, setCurrentRowIndex] = useState(0);
   const [uploadedFileFull, setUploadedFileFull] = useState<File | null>(null);
-  const [complianceCSV, setComplianceCSV] = useState<any[]>([]);
-  const [noncomplianceCSV, setNoncomplianceCSV] = useState<any[]>([]);
-  const [selectedOption, setSelectedOption] = useState(1);
+  const [complianceCSV, setComplianceCSV] = useState<CSVRow[]>([]);
+  const [noncomplianceCSV, setNoncomplianceCSV] = useState<CSVRow[]>([]);
+  // const [selectedOption, setSelectedOption] = useState(1);
+  const [selectedOption, setSelectedOption] = useState<number | null>(null);
 
   const toggleSidebar = () => {
     setSidebarExpanded(!sidebarExpanded);
@@ -73,7 +78,7 @@ export default function Page() {
       setComplianceCSV(compliance);
       setNoncomplianceCSV(noncompliance);
     };
-    reader.readAsText(uploadedFileFull);
+    reader.readAsText(uploadedFileFull!);
     // const parsedData = parseCSV(text);
     // setCsvData(parsedData);
   };
@@ -173,7 +178,7 @@ export default function Page() {
     }
   };
 
-  const copyToClipboard = async (text) => {
+  const copyToClipboard = async (text: string) => {
     try {
       text = text.replace(/\"/g, '').trim();
       await navigator.clipboard.writeText(text);
