@@ -7,7 +7,8 @@ import Sidebar from './components/Sidebar';
 import Dropzone from 'react-dropzone';
 import BackGroundComponent from './components/BackGroundComponent';
 import { useTheme } from 'next-themes';
-import 'iconify-icon';
+// import 'iconify-icon';
+import { Icon } from '@iconify/react';
 import './custom.css';
 
 export default function Page() {
@@ -173,7 +174,7 @@ export default function Page() {
                 }`}
                 onClick={closePopup}
               >
-                <iconify-icon icon="zondicons:close-outline"></iconify-icon>
+                <Icon icon="zondicons:close-outline"></Icon>
               </button>
               <div className="mt-12">
                 <Dropzone onDrop={handleDrop}>
@@ -229,7 +230,7 @@ export default function Page() {
                       theme === 'dark' ? 'border-white' : 'border-black'
                     }`}
                   >
-                    <iconify-icon icon="line-md:document-report"></iconify-icon>
+                    <Icon icon="line-md:document-report"></Icon>
                     <p className="text-base cursor-pointer ml-0.5">
                       Start Report Generation
                     </p>
@@ -250,7 +251,7 @@ export default function Page() {
                     theme === 'dark' ? 'border-white' : 'border-black'
                   }`}
                 >
-                  <iconify-icon icon="mdi:file-upload-outline"></iconify-icon>
+                  <Icon icon="mdi:file-upload-outline"></Icon>
                   <p className="text-base cursor-pointer">Upload</p>
                 </div>
               </button>

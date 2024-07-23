@@ -4,7 +4,8 @@ import Sidebar from '../components/Sidebar';
 import Dropzone from 'react-dropzone';
 import BackGroundComponent from '../components/BackGroundComponent';
 import { useTheme } from 'next-themes';
-import 'iconify-icon';
+// import 'iconify-icon';
+import { Icon } from '@iconify/react';
 import '../custom.css';
 
 export default function Page() {
@@ -263,10 +264,10 @@ export default function Page() {
                     theme === 'dark' ? 'border-white' : 'border-black'
                   }`}
                 >
-                  <iconify-icon
+                  <Icon
                     icon="ph:check-fat-bold"
                     style={{ color: 'lightgreen' }}
-                  ></iconify-icon>
+                  ></Icon>
                   <p className="ml-2 text-base cursor-pointer">Checked</p>
                 </div>
               </button>
@@ -348,9 +349,9 @@ export default function Page() {
                   onClick={handlePrevious}
                   className="text-4xl mr-4"
                 >
-                  <iconify-icon
+                  <Icon
                     icon={'solar:map-arrow-left-linear'}
-                  ></iconify-icon>
+                  ></Icon>
                 </button>
                 <span className="w-fit">
                   <input
@@ -370,9 +371,9 @@ export default function Page() {
                   onClick={handleNext}
                   className="text-4xl ml-4"
                 >
-                  <iconify-icon
+                  <Icon
                     icon={'solar:map-arrow-right-linear'}
-                  ></iconify-icon>
+                  ></Icon>
                 </button>
               </div>
             </div>
