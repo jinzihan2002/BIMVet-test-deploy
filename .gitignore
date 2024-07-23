@@ -39,3 +39,6 @@ next-env.d.ts
 *.pkl
 
 .venv/
+
+app/login/
+app/register
